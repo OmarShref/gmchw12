@@ -1,0 +1,36 @@
+ALGORITHM algorithm_name
+VAR
+    sentence : STRING;
+    vowels ,words,i : INTEGER;
+BEGIN
+
+vowels := 0;
+words :=0;
+i :=0;
+Read(sentence);
+
+WHILE (sentece[i] <> ".") DO
+
+    IF (
+    sentece[i].toLowerCase() = "a" or
+    sentece[i].toLowerCase() = "e" or
+    sentece[i].toLowerCase() = "i" or
+    sentece[i].toLowerCase() = "o" or
+    sentece[i].toLowerCase() = "u"
+  ) THEN
+    vowels = vowels + 1;
+    END_IF
+
+    IF (sentece[i] = " ") THEN
+        words = words + 1;
+    END_IF
+    
+    i = i + 1;
+
+END_WHILE
+
+write(`Sentece is :` + sentece);
+write(`Number of vowels is ` + vowels);
+write(`Number of words is ` + (words+1));
+    
+END

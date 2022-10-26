@@ -1,0 +1,44 @@
+ALGORITHM algorithm_name
+VAR
+    set1,set2 : ARRAY_OF INTEGER[5];
+    sum,i,j : INTEGER;
+BEGIN
+
+    set1 := {11 ,2 ,3 ,4 ,5};
+    set2 := {1 ,9 ,3 ,4 ,5};
+    sum := 0;
+
+    FOR i FROM 0 TO set1.length-1 STEP 1  DO   
+         FOR j FROM 0 TO set2.length-1 STEP 1  DO
+
+            IF (set1[i] = set2[j]) THEN
+                break;
+            END_IF
+
+            IF (j = set2.length - 1) THEN
+                sum = sum + set1[i];
+            END_IF
+
+         END_FOR 
+  END_FOR
+
+  i := 0;
+  j := 0;
+
+  FOR j FROM 0 TO set2.length-1 STEP 1  DO   
+         FOR i FROM 0 TO set1.length-1 STEP 1  DO
+
+            IF (set2[j] = set1[i]) THEN
+                break;
+            END_IF
+
+            IF (i = set1.length - 1) THEN
+                sum = sum + set2[j];
+            END_IF
+
+         END_FOR 
+  END_FOR
+
+    write(`Sum of distinct numbers is : ` + sum);
+
+END
